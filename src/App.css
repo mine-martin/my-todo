@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  text-align: -webkit-center;
+}
+
+.header {
+  min-height: 20vh;
+  
+}
