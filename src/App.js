@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import TodoInput from './components/TodoInput'
-import Tasks from './components/Tasks'
+import TodoInput from './components/TodoInput/TodoInput'
+import Tasks from './components/Tasks/Tasks'
 
 function App() {
 

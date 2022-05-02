@@ -24,7 +24,8 @@ export const ADD_TODO = gql `
 export const UPDATE_TODO = gql `
     mutation($id: Int! $completed: Boolean) {
         update_one_todo(
-            columns: { completed: $completed }
+            columns: { id: $id}
+            _set: { completed: $completed }
         ){
             id
         }
