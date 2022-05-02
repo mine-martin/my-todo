@@ -1,8 +1,18 @@
 import { useMutation } from '@apollo/client'
-import { defaultTypeResolver } from 'graphql'
 import React, { useState } from 'react'
 
-// const TodoInput = () => {
+const updateCache = (cache, { data }) =>{
+  const oldTodo = cache.readQuery({
+    query: GET_TODOS,
+  })
+
+  const newTodo = data.insert_one_todo
+  cache.writeQuery({
+    query : GET_TODOS,
+    data: { todos: [ ...oldTodo.todos, newTodo ] }
+  })
+
+} 
 
   export default  () =>{
     const [task, setTask] = useState('')
@@ -13,8 +23,6 @@ import React, { useState } from 'react'
       setTask('')
     }
   
-
-
   return (
     <div>
       <input 
